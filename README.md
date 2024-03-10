@@ -33,3 +33,17 @@ Correct Guess Handling: If the guess is correct, it sets hasGuessedCorrectly to 
 Feedback for Incorrect Guesses: If the guess is incorrect, it provides feedback to the user, informing them if their guess was too low or too high.
 
 Closing Scanner: Closes the Scanner object to release system resources.
+#studentrecordmanagementsystem
+Importing Scanner and HashMap: The program imports the Scanner and HashMap classes from the java.util package to handle user input and store student records, respectively.
+
+Main Method: The main method is the entry point of the program. It initializes a Scanner object for user input and a HashMap to store student records.
+
+Main Menu Loop: The program runs in a loop until the user chooses to exit. It displays the main menu options and prompts the user to enter their choice.
+
+Handling User's Choice: Based on the user's choice, the program calls appropriate methods to add or view student records, or exit the program.
+
+Adding a Student Record: The addStudentRecord method prompts the user to enter a student's name and roll number, adds the record to the HashMap, and displays a success message.
+
+Viewing a Student Record: The viewStudentRecord method prompts the user to enter a student's name, retrieves the corresponding roll number from the HashMap, and displays the student record if it exists.
+
+
