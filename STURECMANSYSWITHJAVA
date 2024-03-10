@@ -1,0 +1,56 @@
+import java.util.Scanner;
+import java.util.HashMap;
+
+public class StudentRecordManagementSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        HashMap<String, Integer> studentRecords = new HashMap<>();
+
+        while (true) {
+            System.out.println("\nStudent Record Management System");
+            System.out.println("1. Add Student Record");
+            System.out.println("2. View Student Record");
+            System.out.println("3. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    addStudentRecord(scanner, studentRecords);
+                    break;
+                case 2:
+                    viewStudentRecord(scanner, studentRecords);
+                    break;
+                case 3:
+                    System.out.println("Exiting...");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+
+    private static void addStudentRecord(Scanner scanner, HashMap<String, Integer> studentRecords) {
+        System.out.print("Enter student name: ");
+        String name = scanner.next();
+        System.out.print("Enter student roll number: ");
+        int rollNumber = scanner.nextInt();
+
+        studentRecords.put(name, rollNumber);
+        System.out.println("Student record added successfully.");
+    }
+
+    private static void viewStudentRecord(Scanner scanner, HashMap<String, Integer> studentRecords) {
+        System.out.print("Enter student name to view record: ");
+        String name = scanner.next();
+
+        Integer rollNumber = studentRecords.get(name);
+        if (rollNumber != null) {
+            System.out.println("Student Name: " + name);
+            System.out.println("Roll Number: " + rollNumber);
+        } else {
+            System.out.println("Student record not found.");
+        }
+    }
+}
